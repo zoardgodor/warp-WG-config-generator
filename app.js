@@ -5,6 +5,7 @@ const eredmeny=document.getElementById("eredmeny");
 const konfig=document.getElementById("konfig");
 const qrcode=document.getElementById("qrcode");
 const masolasi=document.getElementById("masolasi");
+const feltetelek=document.getElementById("feltetelek");
 
 function ertek(id){
 return document.getElementById(id).value.trim();
@@ -55,6 +56,10 @@ return sor.join("\n");
 }
 
 async function generalas(){
+if(!feltetelek || !feltetelek.checked){
+allapot.textContent="Please accept Cloudflare's Application Terms of Service first.";
+return;
+}
 generalasgomb.disabled=true;
 gombszoveg.textContent="Generating";
 allapot.textContent="Generating keys and requesting WARP registration…";
@@ -73,7 +78,8 @@ body:JSON.stringify({
 key:nyilvanos,
 type:ertek("eszkoz")||"Linux",
 model:ertek("modell")||"PC",
-locale:ertek("nyelv")||"en_US"
+locale:ertek("nyelv")||"en_US",
+terms_accepted:true
 })
 });
 let adat;
@@ -94,6 +100,11 @@ gombszoveg.textContent="Generate";
 }
 
 generalasgomb.addEventListener("click",generalas);
+
+// Keep the acceptance control state in the same script used by the Generate button.
+feltetelek.addEventListener("change",()=>{
+if(feltetelek.checked && allapot.textContent==="Please accept Cloudflare's Application Terms of Service first.") allapot.textContent="Ready to generate a configuration.";
+});
 
 document.getElementById("masolasgomb").addEventListener("click",async()=>{
 try{

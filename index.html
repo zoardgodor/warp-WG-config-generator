@@ -5,20 +5,23 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark">
 <title>WARP WireGuard Config File Generator</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tweetnacl/1.0.3/nacl-fast.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="app.js" defer></script>
+<script src="app.js?v=2" defer></script>
 </head>
 <body>
 <main class="oldal">
 <header class="fejlec">
-<div class="jel">W</div>
 <p class="felirat">WIREGUARD CONFIGURATION TOOL</p>
 <h1>WARP WireGuard config file generator</h1>
 <p class="bevezeto">Create a WireGuard profile for Cloudflare WARP. Your private key and configuration are generated in your browser.</p>
 </header>
 <section class="panel">
+<div class="feltetelek">
+<label class="elfogadas"><input id="feltetelek" type="checkbox"><span>I have read and agree to Cloudflare's <a href="https://www.cloudflare.com/application/terms/" target="_blank" rel="noopener noreferrer">Application Terms of Service</a>.</span></label>
+<p class="segit">You must accept the terms before generating a configuration.</p>
+</div>
 <button id="generalasgomb" class="gomb general" type="button"><span id="gombszoveg">Generate</span><span id="forgo" class="forgo" aria-hidden="true"></span></button>
 <p id="allapot" class="allapot" role="status">Ready to generate a configuration.</p>
 <details class="halado">
@@ -54,6 +57,7 @@
 </section>
 <footer>
 <p>This is an unofficial Cloudflare tool.</p>
+<a href="privacy.html">Privacy Policy</a>
 <a href="https://github.com/zoardgodor/warp-WG-config-generator" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
 </footer>
 </main>

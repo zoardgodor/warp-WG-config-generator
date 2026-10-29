@@ -27,6 +27,10 @@ if (!is_array($adat)) {
     hiba('Invalid JSON request.');
 }
 
+if (!isset($adat['terms_accepted']) || $adat['terms_accepted'] !== true) {
+    hiba('You must accept the Application Terms of Service first.', 400);
+}
+
 $kulcs = isset($adat['key']) ? trim($adat['key']) : '';
 if (!preg_match('/^[A-Za-z0-9+\/]{42}[AEIMQUYcgkosw048]=$/', $kulcs) && !preg_match('/^[A-Za-z0-9+\/]{43}=$/', $kulcs)) {
     if (strlen(base64_decode($kulcs, true) ?: '') !== 32) {
@@ -83,5 +87,20 @@ if (empty($eredmeny['config']['peers'][0]['public_key']) || empty($eredmeny['con
     hiba('The registration API response did not contain the expected WireGuard data.', 502);
 }
 
-echo json_encode($eredmeny);
+$config = $eredmeny['config'];
+$peer = $config['peers'][0];
+$interf = $config['interface'];
+$valaszadat = [
+    'config' => [
+        'interface' => [
+            'addresses' => isset($interf['addresses']) ? $interf['addresses'] : []
+        ],
+        'peers' => [[
+            'public_key' => $peer['public_key'],
+            'endpoint' => isset($peer['endpoint']) ? $peer['endpoint'] : []
+        ]]
+    ]
+];
+
+echo json_encode($valaszadat);
 ?>
