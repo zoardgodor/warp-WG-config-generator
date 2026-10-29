@@ -1,32 +1,32 @@
 *{box-sizing:border-box}
-:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f3f4f6;background:#101114;font-synthesis:none;text-rendering:optimizeLegibility}
-body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#28231e 0%,#151619 37%,#101114 74%);padding:46px 18px 28px}
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,“Segoe UI”,sans-serif;color:#f3f4f6;background:#101114;font-synthesis:none;text-rendering:optimizeLegibility}
+body{margin:0;min-height:100vh;background:#101114;padding:46px 18px 28px}
 .oldal{width:min(760px,100%);margin:0 auto}
 .fejlec{text-align:center;margin:0 auto 28px}
-.jel{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;margin:0 auto 20px;background:#f97316;color:#171717;font-size:27px;font-weight:900;box-shadow:0 8px 35px #f9731629}
+.jel{display:grid;place-items:center;width:48px;height:48px;border-radius:0;margin:0 auto 20px;background:#f97316;color:#171717;font-size:27px;font-weight:900;box-shadow:none}
 .felirat{font-size:10px;letter-spacing:.17em;font-weight:800;color:#f97316;margin:0 0 10px}
 h1{font-size:clamp(29px,5.5vw,43px);line-height:1.12;letter-spacing:-.045em;margin:0 auto;max-width:680px}
 .bevezeto{max-width:540px;color:#a1a1aa;line-height:1.7;font-size:14px;margin:17px auto 0}
-.panel{background:#191a1e;border:1px solid #303136;border-radius:22px;padding:26px;box-shadow:0 24px 80px #0003}
-.gomb{border:0;border-radius:12px;min-height:51px;padding:0 20px;font-size:14px;font-weight:750;cursor:pointer;transition:background .18s,transform .18s,color .18s;display:inline-flex;align-items:center;justify-content:center;gap:11px}
+.panel{background:#191a1e;border:1px solid #303136;border-radius:0;padding:26px;box-shadow:none}
+.gomb{border:0;border-radius:0;min-height:51px;padding:0 20px;font-size:14px;font-weight:750;cursor:pointer;transition:background .18s,transform .18s,color .18s;display:inline-flex;align-items:center;justify-content:center;gap:11px}
 .gomb:active{transform:scale(.99)}
 .gomb:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid #fb923c;outline-offset:3px}
 .general{background:#f97316;color:#171717}
 .general:hover{background:#fb923c}
 .general:disabled{background:#55565c;color:#c6c6cb;cursor:wait;transform:none}
 #generalasgomb{width:100%}
-.forgo{display:none;width:17px;height:17px;border:2px solid #ffffff70;border-top-color:#fff;border-radius:50%;animation:forgas .75s linear infinite}
+.forgo{display:none;width:17px;height:17px;border:2px solid #ffffff70;border-top-color:#fff;border-radius:0;animation:forgas .75s linear infinite}
 #generalasgomb:disabled .forgo{display:inline-block}
 @keyframes forgas{to{transform:rotate(360deg)}}
 .allapot{min-height:19px;text-align:center;color:#a1a1aa;font-size:12px;margin:13px 0 20px}
 .halado{border-top:1px solid #33343a;padding-top:18px}
 summary{list-style:none;cursor:pointer;color:#e4e4e7;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:space-between}
 summary::-webkit-details-marker{display:none}
-summary:after{content:"+";font-size:22px;color:#f97316;font-weight:400}
-details[open] summary:after{content:"−"}
+summary:after{content:”+”;font-size:22px;color:#f97316;font-weight:400}
+details[open] summary:after{content:“−”}
 .mezok{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:21px}
 label{display:flex;flex-direction:column;gap:8px;font-size:12px;color:#c4c4cb;font-weight:650}
-input,textarea{width:100%;border:1px solid #3a3b42;background:#111216;border-radius:9px;color:#f4f4f5;font:inherit;padding:12px}
+input,textarea{width:100%;border:1px solid #3a3b42;background:#111216;border-radius:0;color:#f4f4f5;font:inherit;padding:12px}
 input{height:43px;font-size:13px;font-weight:450;min-width:0}
 input:focus,textarea:focus{border-color:#f97316;outline:none}
 .szeles{grid-column:1/-1}
@@ -36,7 +36,7 @@ input:focus,textarea:focus{border-color:#f97316;outline:none}
 .szakaszfej{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px}
 .szakaszfej h2{font-size:18px;letter-spacing:-.025em;margin:0}
 .szakaszfej .felirat{margin-bottom:6px}
-.qrkeret{width:max-content;max-width:100%;margin:0 auto;padding:13px;background:#fff;border-radius:14px;min-height:230px;display:grid;place-items:center}
+.qrkeret{width:max-content;max-width:100%;margin:0 auto;padding:13px;background:#fff;border-radius:0;min-height:230px;display:grid;place-items:center}
 #qrcode{width:204px;min-height:204px;display:grid;place-items:center}
 #qrcode img,#qrcode canvas{max-width:100%;height:auto!important}
 .qrleiras{text-align:center;color:#92939b;font-size:12px;line-height:1.6;margin:15px auto 27px}
@@ -51,4 +51,4 @@ footer{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap
 footer p{margin:0}
 footer a{color:#f97316;text-decoration:none;font-weight:700}
 footer a:hover{text-decoration:underline}
-@media(max-width:560px){body{padding:30px 12px 24px}.panel{padding:19px 15px;border-radius:17px}.mezok{grid-template-columns:1fr;gap:13px}.szeles{grid-column:auto}.gombsor{grid-template-columns:1fr}.bevezeto{font-size:13px}h1{font-size:32px}.qrkeret{min-height:220px}}
+@media(max-width:560px){body{padding:30px 12px 24px}.panel{padding:19px 15px;border-radius:0}.mezok{grid-template-columns:1fr;gap:13px}.szeles{grid-column:auto}.gombsor{grid-template-columns:1fr}.bevezeto{font-size:13px}h1{font-size:32px}.qrkeret{min-height:220px}}
