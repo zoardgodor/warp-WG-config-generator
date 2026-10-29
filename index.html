@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>WARP WireGuard Config File Generator</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tweetnacl/1.0.3/nacl-fast.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<main class="oldal">
+<header class="fejlec">
+<div class="jel">W</div>
+<p class="felirat">WIREGUARD CONFIGURATION TOOL</p>
+<h1>WARP WireGuard config file generator</h1>
+<p class="bevezeto">Create a WireGuard profile for Cloudflare WARP. Your private key and configuration are generated in your browser.</p>
+</header>
+<section class="panel">
+<button id="generalasgomb" class="gomb general" type="button"><span id="gombszoveg">Generate</span><span id="forgo" class="forgo" aria-hidden="true"></span></button>
+<p id="allapot" class="allapot" role="status">Ready to generate a configuration.</p>
+<details class="halado">
+<summary>Advanced options</summary>
+<div class="mezok">
+<label>Device type<input id="eszkoz" value="Linux" autocomplete="off"></label>
+<label>Device model<input id="modell" value="PC" autocomplete="off"></label>
+<label>Locale<input id="nyelv" value="en_US" autocomplete="off"></label>
+<label>DNS servers<input id="dns" value="1.1.1.1, 1.0.0.1, 2606:4700:4700::1111, 2606:4700:4700::1001" autocomplete="off"></label>
+<label>MTU<input id="mtu" type="number" min="576" max="9000" value="1280"></label>
+<label>Endpoint<input id="vegpont" value="engage.cloudflareclient.com:2408" autocomplete="off"></label>
+<label class="szeles">Allowed IPs<input id="engedelyezett" value="0.0.0.0/0, ::/0" autocomplete="off"></label>
+<label class="szeles">Interface address override <span class="segit">Leave blank to use the address returned by the API.</span><input id="cim" placeholder="IPv4/IPv6 address(es)" autocomplete="off"></label>
+</div>
+<p class="megjegyzes">Device type, model and locale are sent to the registration API. DNS, MTU, endpoint and Allowed IPs are applied locally to the downloaded profile.</p>
+</details>
+<div id="eredmeny" class="eredmeny" hidden>
+<div class="szakaszfej">
+<div><p class="felirat">01 / SCAN</p><h2>WireGuard QR code</h2></div>
+</div>
+<div class="qrkeret"><div id="qrcode"></div></div>
+<p class="qrleiras">Scan this QR code with the WireGuard app to import the tunnel.</p>
+<div class="szakaszfej konf fejkoz">
+<div><p class="felirat">02 / CONFIGURATION</p><h2>Config file contents</h2></div>
+</div>
+<textarea id="konfig" spellcheck="false" readonly aria-label="WireGuard configuration"></textarea>
+<div class="gombsor">
+<button id="masolasgomb" class="gomb masodlagos" type="button">Copy .conf contents</button>
+<button id="letoltesgomb" class="gomb general" type="button">Download .conf</button>
+</div>
+<p id="masolasi" class="allapot" role="status"></p>
+</div>
+</section>
+<footer>
+<p>This is an unofficial Cloudflare tool.</p>
+<a href="https://github.com/zoardgodor/warp-WG-config-generator" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+</footer>
+</main>
+</body>
+</html>
