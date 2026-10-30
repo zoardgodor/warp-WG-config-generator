@@ -83,7 +83,7 @@ terms_accepted:true
 })
 });
 let adat;
-try{adat=await valasz.json()}catch(e){throw new Error("The server returned an unreadable response. Check that api.php is uploaded correctly.")}
+try{adat=await valasz.json()}catch(e){throw new Error("The server returned an unreadable response. Try refreshing the page.")}
 if(!valasz.ok||adat.error)throw new Error(adat.error||"Registration failed with HTTP "+valasz.status+".");
 const szoveg=confkeszit(adat,privat);
 konfig.value=szoveg;
