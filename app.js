@@ -101,7 +101,6 @@ gombszoveg.textContent="Generate";
 
 generalasgomb.addEventListener("click",generalas);
 
-// Keep the acceptance control state in the same script used by the Generate button.
 feltetelek.addEventListener("change",()=>{
 if(feltetelek.checked && allapot.textContent==="Please accept Cloudflare's Application Terms of Service first.") allapot.textContent="Ready to generate a configuration.";
 });
